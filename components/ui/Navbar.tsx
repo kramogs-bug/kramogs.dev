@@ -58,8 +58,6 @@ export default function Navbar() {
           </span>
           <a
             href={emailUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-neon-green"
           >
             Let&apos;s talk

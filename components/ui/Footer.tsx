@@ -28,8 +28,6 @@ export default function Footer() {
           </a>
           <a
             href={emailUrl}
-            target="_blank"
-            rel="noopener noreferrer"
             className="grid h-10 w-10 place-items-center rounded-full border border-border bg-white text-text-secondary transition-colors hover:border-neon-green hover:text-neon-green"
             aria-label="Email"
           >

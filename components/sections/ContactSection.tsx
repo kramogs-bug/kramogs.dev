@@ -33,8 +33,6 @@ export default function ContactSection() {
 
             <a
               href={projectEmailUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-between gap-4 rounded-full bg-ink px-6 py-4 text-sm font-bold text-white shadow-[0_18px_40px_rgba(8,42,47,0.20)] transition-transform hover:-translate-y-1 sm:w-auto"
             >
               Start a project
@@ -45,8 +43,6 @@ export default function ContactSection() {
           <div className="mt-12 flex flex-col gap-3 border-t border-ink/15 pt-7 text-sm font-semibold text-ink/70 sm:flex-row sm:flex-wrap sm:gap-7">
             <a
               href={emailUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex items-center gap-2 transition-colors hover:text-ink"
             >
               <Mail className="h-4 w-4" />

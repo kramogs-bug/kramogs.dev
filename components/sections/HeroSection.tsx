@@ -63,8 +63,6 @@ export default function HeroSection() {
             </a>
             <a
               href={emailUrl}
-              target="_blank"
-              rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border-bright bg-white/80 px-6 py-3.5 text-sm font-bold text-ink transition-all hover:-translate-y-0.5 hover:border-neon-green sm:w-auto"
             >
               Start a conversation
