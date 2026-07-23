@@ -10,6 +10,13 @@ import {
   Workflow,
 } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
+import { getGmailComposeUrl } from "@/lib/utils";
+
+const emailUrl = getGmailComposeUrl({
+  to: personalInfo.email,
+  subject: "Project inquiry",
+  body: "Hi John Mark,\n\nI would like to discuss a project with you.\n\n",
+});
 
 export default function HeroSection() {
   return (
@@ -55,7 +62,9 @@ export default function HeroSection() {
               <ArrowDownRight className="h-4 w-4" />
             </a>
             <a
-              href={`mailto:${personalInfo.email}?subject=Project%20inquiry`}
+              href={emailUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border-bright bg-white/80 px-6 py-3.5 text-sm font-bold text-ink transition-all hover:-translate-y-0.5 hover:border-neon-green sm:w-auto"
             >
               Start a conversation

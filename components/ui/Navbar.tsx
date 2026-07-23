@@ -4,6 +4,7 @@ import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
+import { getGmailComposeUrl } from "@/lib/utils";
 
 const navLinks = [
   { label: "Work", href: "#projects" },
@@ -11,6 +12,12 @@ const navLinks = [
   { label: "Process", href: "#process" },
   { label: "Proof", href: "#testimonials" },
 ];
+
+const emailUrl = getGmailComposeUrl({
+  to: personalInfo.email,
+  subject: "Project inquiry",
+  body: "Hi John Mark,\n\nI would like to discuss a project with you.\n\n",
+});
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -50,7 +57,9 @@ export default function Navbar() {
             Open for projects
           </span>
           <a
-            href={`mailto:${personalInfo.email}?subject=Project%20inquiry`}
+            href={emailUrl}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-neon-green"
           >
             Let&apos;s talk
