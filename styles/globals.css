@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --background: #f3f6f3;
+  --surface: #ffffff;
+  --neon-green: #0b6b60;
+  --neon-blue: #123f49;
+  --neon-cyan: #71d2c0;
+  --border: #d7e1dc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  background-color: var(--background);
+  color: #092227;
+  font-family: "Segoe UI Variable", "Segoe UI", Arial, sans-serif;
+  margin: 0;
+  min-width: 320px;
+  overflow-x: hidden;
+}
+
+a {
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(239, 131, 84, 0.75);
+  outline-offset: 3px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #edf2ef;
+}
+::-webkit-scrollbar-thumb {
+  background: #9cb8ad;
+  border: 3px solid #edf2ef;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #0b6b60;
+}
+
+::selection {
+  background: rgba(239, 131, 84, 0.28);
+  color: #082a2f;
+}
+
+.bg-grid {
+  background-image: linear-gradient(rgba(11, 107, 96, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(11, 107, 96, 0.08) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
+}
+
+.section-kicker {
+  align-items: center;
+  color: #0b6b60;
+  display: inline-flex;
+  font-family: "Cascadia Code", "SFMono-Regular", Consolas, monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  gap: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.section-kicker::before {
+  background: #ef8354;
+  border-radius: 999px;
+  content: "";
+  height: 0.45rem;
+  width: 0.45rem;
+}
+
+.balanced {
+  text-wrap: balance;
+}
+
+.pretty {
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
