@@ -93,6 +93,20 @@ export default function ContactLauncher({
       const result = (await response.json().catch(() => ({}))) as ContactResponse;
 
       if (!response.ok || !result.ok) {
+        if (response.status === 429) {
+          const retryAfter = Number.parseInt(
+            response.headers.get("retry-after") || "",
+            10,
+          );
+          const waitMinutes = Number.isFinite(retryAfter)
+            ? Math.max(1, Math.ceil(retryAfter / 60))
+            : 10;
+
+          throw new Error(
+            `Message limit reached. Please wait about ${waitMinutes} minute${waitMinutes === 1 ? "" : "s"} before trying again.`,
+          );
+        }
+
         throw new Error(result.error || "Your message could not be sent. Please try again.");
       }
 
@@ -239,13 +253,16 @@ export default function ContactLauncher({
                         <textarea
                           name="message"
                           minLength={20}
-                          maxLength={3000}
+                          maxLength={2000}
                           rows={6}
                           required
                           defaultValue={body}
                           placeholder="Tell me about the workflow or project you have in mind."
                           className="min-h-36 resize-y rounded-xl border border-border bg-background px-4 py-3 text-sm font-medium leading-6 text-ink outline-none transition focus:border-neon-green focus:ring-4 focus:ring-neon-green/10"
                         />
+                        <span className="text-xs font-medium leading-5 text-text-muted">
+                          20–2,000 characters · protected by invisible anti-spam checks
+                        </span>
                       </label>
 
                       <label

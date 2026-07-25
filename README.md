@@ -9,6 +9,7 @@ Premium personal portfolio website built as an "Automation Control Center" — a
 - **Tailwind CSS** — Custom design tokens
 - **Framer Motion** — Smooth animations
 - **Lucide React** — Icon system
+- **Vercel BotID** — Invisible automated-bot protection for the contact form
 
 ## Getting Started
 
@@ -40,6 +41,12 @@ Never expose `RESEND_API_KEY` in client code or commit `.env.local`. Add the sam
 variables to the Vercel project settings for Production, Preview, and Development.
 The onboarding sender is suitable for initial testing. For production, verify a
 domain in Resend and update `CONTACT_FROM_EMAIL` to use that domain.
+
+The contact endpoint also enforces same-origin requests, strict body and field
+limits, a honeypot, spam heuristics, and Resend idempotency. On Vercel, BotID
+checks every contact submission before an email is sent. For an additional
+network-level limit, configure a Vercel WAF rate-limit rule for `POST
+/api/contact`.
 
 ### 4. Customize your content
 
