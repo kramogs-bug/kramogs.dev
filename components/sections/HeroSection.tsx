@@ -10,7 +10,7 @@ import {
   Workflow,
 } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
-import EmailAppLauncher from "@/components/ui/EmailAppLauncher";
+import ContactLauncher from "@/components/ui/ContactLauncher";
 
 export default function HeroSection() {
   return (
@@ -55,14 +55,14 @@ export default function HeroSection() {
               Explore selected work
               <ArrowDownRight className="h-4 w-4" />
             </a>
-            <EmailAppLauncher
+            <ContactLauncher
               subject="Project inquiry"
               body={"Hi John Mark,\n\nI would like to discuss a project with you.\n\n"}
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border-bright bg-white/80 px-6 py-3.5 text-sm font-bold text-ink transition-all hover:-translate-y-0.5 hover:border-neon-green sm:w-auto"
             >
               Start a conversation
               <ArrowUpRight className="h-4 w-4" />
-            </EmailAppLauncher>
+            </ContactLauncher>
           </div>
 
           <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 border-t border-border pt-6 text-sm text-text-secondary">

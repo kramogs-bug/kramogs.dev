@@ -18,7 +18,7 @@ import {
   Wrench,
   Zap,
 } from "lucide-react";
-import EmailAppLauncher from "@/components/ui/EmailAppLauncher";
+import ContactLauncher from "@/components/ui/ContactLauncher";
 import { automationQuests } from "@/data/automationQuest";
 import { capabilities, projects } from "@/data/portfolio";
 
@@ -382,14 +382,14 @@ export default function CapabilitiesSection() {
                       Run {nextStep.title}
                     </button>
                   ) : (
-                    <EmailAppLauncher
+                    <ContactLauncher
                       subject={`${selectedCapability.title} project inquiry`}
                       body={`Hi John Mark,\n\nI tried the ${quest.codename} automation demo on your portfolio. I would like to discuss a similar workflow.\n\n`}
                       className="inline-flex items-center justify-center gap-2 rounded-full bg-neon-cyan px-5 py-3 text-xs font-extrabold text-ink transition-transform hover:-translate-y-0.5"
                     >
                       Discuss this workflow
                       <ArrowUpRight className="h-3.5 w-3.5" aria-hidden="true" />
-                    </EmailAppLauncher>
+                    </ContactLauncher>
                   )}
                 </div>
               </div>

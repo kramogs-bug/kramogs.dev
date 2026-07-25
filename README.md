@@ -26,7 +26,22 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
-### 3. Customize your content
+### 3. Configure the contact form
+
+Copy `.env.example` to `.env.local`, then add a server-side Resend API key:
+
+```bash
+RESEND_API_KEY=re_your_key_here
+CONTACT_TO_EMAIL=vjohnmark673@gmail.com
+CONTACT_FROM_EMAIL="Kramogs.Dev Portfolio <onboarding@resend.dev>"
+```
+
+Never expose `RESEND_API_KEY` in client code or commit `.env.local`. Add the same
+variables to the Vercel project settings for Production, Preview, and Development.
+The onboarding sender is suitable for initial testing. For production, verify a
+domain in Resend and update `CONTACT_FROM_EMAIL` to use that domain.
+
+### 4. Customize your content
 
 All content is in **`data/portfolio.ts`** — edit this file to update:
 - Your name, email, GitHub
@@ -37,7 +52,7 @@ All content is in **`data/portfolio.ts`** — edit this file to update:
 - Testimonials
 - Process steps
 
-### 4. Replace placeholder images
+### 5. Replace placeholder images
 
 Project preview cards use SVG-generated placeholders. To replace with real screenshots:
 - Add screenshots to `/public/projects/`

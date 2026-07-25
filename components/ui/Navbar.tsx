@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { ArrowUpRight, Menu, X } from "lucide-react";
-import EmailAppLauncher from "@/components/ui/EmailAppLauncher";
+import ContactLauncher from "@/components/ui/ContactLauncher";
 
 const navLinks = [
   { label: "Work", href: "#projects" },
@@ -49,14 +49,14 @@ export default function Navbar() {
             <span className="h-2 w-2 rounded-full bg-neon-green shadow-[0_0_0_4px_rgba(11,107,96,0.12)]" />
             Open for projects
           </span>
-          <EmailAppLauncher
+          <ContactLauncher
             subject="Project inquiry"
             body={"Hi John Mark,\n\nI would like to discuss a project with you.\n\n"}
             className="inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 text-sm font-bold text-white transition-colors hover:bg-neon-green"
           >
             Let&apos;s talk
             <ArrowUpRight className="h-4 w-4" />
-          </EmailAppLauncher>
+          </ContactLauncher>
         </div>
 
         <button

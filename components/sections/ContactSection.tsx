@@ -1,6 +1,6 @@
 import { ArrowUpRight, Linkedin, Mail, MapPin } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
-import EmailAppLauncher from "@/components/ui/EmailAppLauncher";
+import ContactLauncher from "@/components/ui/ContactLauncher";
 
 export default function ContactSection() {
   return (
@@ -24,24 +24,24 @@ export default function ContactSection() {
               </p>
             </div>
 
-            <EmailAppLauncher
+            <ContactLauncher
               subject="Automation project inquiry"
               body={"Hi John Mark,\n\nI would like to discuss a project with you.\n\n"}
               className="inline-flex w-full items-center justify-between gap-4 rounded-full bg-ink px-6 py-4 text-sm font-bold text-white shadow-[0_18px_40px_rgba(8,42,47,0.20)] transition-transform hover:-translate-y-1 sm:w-auto"
             >
               Start a project
               <ArrowUpRight className="h-5 w-5" />
-            </EmailAppLauncher>
+            </ContactLauncher>
           </div>
 
           <div className="mt-12 flex flex-col gap-3 border-t border-ink/15 pt-7 text-sm font-semibold text-ink/70 sm:flex-row sm:flex-wrap sm:gap-7">
-            <EmailAppLauncher
+            <ContactLauncher
               ariaLabel={`Email ${personalInfo.email}`}
               className="inline-flex items-center gap-2 transition-colors hover:text-ink"
             >
               <Mail className="h-4 w-4" />
               {personalInfo.email}
-            </EmailAppLauncher>
+            </ContactLauncher>
             <a
               href={personalInfo.linkedin}
               target="_blank"
