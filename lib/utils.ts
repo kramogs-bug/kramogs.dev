@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getGmailComposeUrl({
+export function getMailtoUrl({
   to,
   subject,
   body,
@@ -14,19 +14,10 @@ export function getGmailComposeUrl({
   subject?: string;
   body?: string;
 }) {
-  const params = new URLSearchParams({
-    view: "cm",
-    fs: "1",
-    to,
-  });
+  const params = [
+    subject ? `subject=${encodeURIComponent(subject)}` : null,
+    body ? `body=${encodeURIComponent(body)}` : null,
+  ].filter(Boolean);
 
-  if (subject) {
-    params.set("su", subject);
-  }
-
-  if (body) {
-    params.set("body", body);
-  }
-
-  return `https://mail.google.com/mail/?${params.toString()}`;
+  return params.length > 0 ? `mailto:${to}?${params.join("&")}` : `mailto:${to}`;
 }

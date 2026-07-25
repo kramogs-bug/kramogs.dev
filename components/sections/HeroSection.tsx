@@ -10,13 +10,7 @@ import {
   Workflow,
 } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
-import { getGmailComposeUrl } from "@/lib/utils";
-
-const emailUrl = getGmailComposeUrl({
-  to: personalInfo.email,
-  subject: "Project inquiry",
-  body: "Hi John Mark,\n\nI would like to discuss a project with you.\n\n",
-});
+import EmailAppLauncher from "@/components/ui/EmailAppLauncher";
 
 export default function HeroSection() {
   return (
@@ -61,13 +55,14 @@ export default function HeroSection() {
               Explore selected work
               <ArrowDownRight className="h-4 w-4" />
             </a>
-            <a
-              href={emailUrl}
+            <EmailAppLauncher
+              subject="Project inquiry"
+              body={"Hi John Mark,\n\nI would like to discuss a project with you.\n\n"}
               className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-border-bright bg-white/80 px-6 py-3.5 text-sm font-bold text-ink transition-all hover:-translate-y-0.5 hover:border-neon-green sm:w-auto"
             >
               Start a conversation
               <ArrowUpRight className="h-4 w-4" />
-            </a>
+            </EmailAppLauncher>
           </div>
 
           <div className="mt-9 flex flex-wrap gap-x-6 gap-y-3 border-t border-border pt-6 text-sm text-text-secondary">

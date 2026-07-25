@@ -1,8 +1,6 @@
 import { ArrowUp, Linkedin, Mail } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
-import { getGmailComposeUrl } from "@/lib/utils";
-
-const emailUrl = getGmailComposeUrl({ to: personalInfo.email });
+import EmailAppLauncher from "@/components/ui/EmailAppLauncher";
 
 export default function Footer() {
   return (
@@ -26,13 +24,12 @@ export default function Footer() {
           >
             <Linkedin className="h-4 w-4" />
           </a>
-          <a
-            href={emailUrl}
+          <EmailAppLauncher
             className="grid h-10 w-10 place-items-center rounded-full border border-border bg-white text-text-secondary transition-colors hover:border-neon-green hover:text-neon-green"
-            aria-label="Email"
+            ariaLabel="Open email contact options"
           >
             <Mail className="h-4 w-4" />
-          </a>
+          </EmailAppLauncher>
           <a
             href="#main-content"
             className="ml-2 inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.1em] text-text-secondary transition-colors hover:text-neon-green"
