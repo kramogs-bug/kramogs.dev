@@ -1,5 +1,13 @@
-import Image from "next/image";
-import { ArrowDownRight, Download, Github, Linkedin, MapPin } from "lucide-react";
+import {
+  ArrowDownRight,
+  BriefcaseBusiness,
+  CalendarDays,
+  Download,
+  Github,
+  GraduationCap,
+  Linkedin,
+  MapPin,
+} from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 
 export default function HeroSection() {
@@ -39,22 +47,48 @@ export default function HeroSection() {
           </div>
         </div>
 
-        <div className="relative mx-auto w-full max-w-[540px]">
+        <aside className="relative mx-auto w-full max-w-[500px]" aria-label="OJT application snapshot">
           <div className="absolute -inset-5 -z-10 rotate-2 rounded-[2rem] bg-neon-green/10" />
-          <div className="overflow-hidden rounded-[2rem] border border-white bg-white p-3 shadow-[0_30px_90px_rgba(17,35,31,0.16)]">
-            <div className="relative aspect-[4/4.3] overflow-hidden rounded-[1.45rem] bg-surface-2">
-              <Image src="/assets/john-mark-valdez.jpg" alt="John Mark R. Valdez" fill priority sizes="(min-width: 1024px) 42vw, 90vw" className="object-cover" />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/80 to-transparent px-6 pb-6 pt-20 text-white">
-                <p className="text-xl font-extrabold">Computer Engineering Student</p>
-                <p className="mt-1 text-sm text-white/70">Full-Stack & Automation Developer</p>
+          <div className="rounded-[2rem] border border-white bg-white p-6 shadow-[0_30px_90px_rgba(17,35,31,0.14)] sm:p-8">
+            <div className="flex items-center justify-between gap-4 border-b border-border pb-6">
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-neon-green">OJT Snapshot</p>
+                <h2 className="mt-2 text-2xl font-black tracking-[-0.035em] text-ink">Ready to contribute and learn.</h2>
               </div>
+              <span className="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-ink text-white">
+                <BriefcaseBusiness className="h-5 w-5" />
+              </span>
             </div>
-            <div className="grid grid-cols-2 gap-3 p-3 pt-5">
-              <div className="rounded-2xl bg-surface-2 p-4"><p className="text-2xl font-black text-ink">4th year</p><p className="mt-1 text-xs font-semibold text-text-muted">BS Computer Engineering</p></div>
-              <div className="rounded-2xl bg-surface-2 p-4"><p className="text-2xl font-black text-ink">480 hrs</p><p className="mt-1 text-xs font-semibold text-text-muted">Required OJT duration</p></div>
-            </div>
+
+            <dl className="divide-y divide-border">
+              <div className="flex gap-4 py-5">
+                <CalendarDays className="mt-0.5 h-5 w-5 shrink-0 text-neon-green" />
+                <div>
+                  <dt className="text-xs font-bold uppercase tracking-[0.14em] text-text-muted">Availability</dt>
+                  <dd className="mt-1 font-bold text-ink">{personalInfo.availability} · 480 hours</dd>
+                </div>
+              </div>
+              <div className="flex gap-4 py-5">
+                <GraduationCap className="mt-0.5 h-5 w-5 shrink-0 text-neon-green" />
+                <div>
+                  <dt className="text-xs font-bold uppercase tracking-[0.14em] text-text-muted">Education</dt>
+                  <dd className="mt-1 font-bold text-ink">4th-year BS Computer Engineering</dd>
+                </div>
+              </div>
+              <div className="flex gap-4 py-5">
+                <BriefcaseBusiness className="mt-0.5 h-5 w-5 shrink-0 text-neon-green" />
+                <div>
+                  <dt className="text-xs font-bold uppercase tracking-[0.14em] text-text-muted">Preferred work</dt>
+                  <dd className="mt-1 font-bold text-ink">Software development · IT · Automation</dd>
+                </div>
+              </div>
+            </dl>
+
+            <p className="rounded-2xl bg-surface-2 px-5 py-4 text-sm font-semibold leading-6 text-text-secondary">
+              Comfortable building with Next.js, TypeScript, Supabase, PostgreSQL, and practical automation tools.
+            </p>
           </div>
-        </div>
+        </aside>
       </div>
     </section>
   );
